@@ -1,4 +1,12 @@
 applications:
-- name: node-hello-world
-  memory: 128M
+- name: whats-in-the-pic
+  command: node app.js
+  path: .
+  memory: 256M
+  instances: 1
+  domain: mybluemix.net
+  host: whats-in-the-pic
+  disk_quota: 1024M
   buildpack: sdk-for-nodejs
+  services:
+  - uwe-visual-recognition

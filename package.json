@@ -1,16 +1,24 @@
 {
-	"name": "HelloWorldNodeApp",
-	"version": "0.0.1",
-    "private": true,
-	"scripts": {
-		"start": "node app.js"
-	},
-	"dependencies": {
-		"express": "4.13.x",
-		"cfenv": "1.0.x"
-	},
-	"repository": {},
-	"engines": {
-		"node": "4.2.x"
-	} 
+  "name": "whats-in-the-pic",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "node app.js"
+  },
+  "dependencies": {
+    "body-parser": "1.15.x",
+    "cfenv": "1.0.x",
+    "express": "4.14.x"
+  },
+  "repository": {},
+  "engines": {
+    "node": "4.x"
+  },
+  "devDependencies": {
+    "babel-eslint": "^7.1.1",
+    "eslint": "^3.13.1",
+    "eslint-plugin-import": "^2.2.0",
+    "eslint-plugin-prefer-object-spread": "^1.1.0",
+    "eslint-plugin-react": "^6.9.0"
+  }
 }
