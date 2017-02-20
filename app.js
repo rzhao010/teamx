@@ -61,11 +61,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 // app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
-// ----------------------------------------------------------------------------
-// Set up the Watson visual recognition service
-// ----------------------------------------------------------------------------
-
-// insrert visual recogniton code here
+// handle post request
 
 app.post('/data', function(req, res) {
   if (!req.body) {
@@ -77,8 +73,18 @@ app.post('/data', function(req, res) {
     console.log('I will be analyzing:');
     console.log(req.body.link);
 
+// -------------------- snip ----------------------------------------------
 
-    // this is where we need to pass the url to Watson
+// require the axios library for http REST calls
+
+// get the API keys for Watson
+var visualRecognitiontConfig = appEnv.getServiceCreds('uwe-visual-recognition');
+if (!visualRecognitiontConfig) {
+  throw new Error('Could not find a configuration for the recognition service');
+}
+
+
+// -------------------- snip ----------------------------------------------
 
 
     return res.send(req.body);

@@ -8,7 +8,8 @@
   "dependencies": {
     "body-parser": "1.15.x",
     "cfenv": "1.0.x",
-    "express": "4.14.x"
+    "express": "4.14.x",
+    "watson-developer-cloud": "^2.20.1"
   },
   "repository": {},
   "engines": {
