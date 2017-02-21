@@ -111,6 +111,7 @@ app.post('/data', function(req, res) {
         if (response.data.images[0].error) {
           console.log('Error from visual recognition service:');
           console.log(response.data.images[0].error.description);
+          return res.sendStatus(300);
         }
 
         return res.send(response.data);

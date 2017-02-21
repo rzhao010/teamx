@@ -56,25 +56,37 @@ $(document).ready(function() {
           var newRow = '<tr><td>' + classToDisplay + '</td><td>' + scoreToDisplay + '</td><td></tr>';
           $('table tbody').append(newRow);
         }
-
-        /*
-        for (var key in dataFromServer) {
-          if (classesScores.hasOwnProperty(key)) {
-            var val = classesScores[key];
-            console.log(key + ' ' + val);
-          }
-        }
-        */
-
       },
 
 
       error: function(jqXhr, textStatus, errorThrown) {
         // log error to console
         console.log('error');
+        console.log(jqXhr);
+        console.log(textStatus);
         console.log(errorThrown);
 
+        console.log();
+        console.log(jqXhr.status);
+
+        var errorMessage = '';
+
+        if (jqXhr.status === 300) {
+          errorMessage = 'I could not find an image at that URL';
+        } else if (jqXhr.status === 400) {
+          errorMessage = 'Hmmm ... the backend is not answering';
+        } else {
+          errorMessage = 'I have no idea what went wrong';
+        }
+
+        // hide image and loader
+        $('#img').hide();
+        $('.loader').hide();
+        $('#form').show();
+
         // Show failure message
+        document.getElementById('errorMessage').innerHTML = errorMessage;
+        $('#failuremodal').modal('show');
       }
     });
 

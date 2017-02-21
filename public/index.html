@@ -29,26 +29,43 @@
 
   <div class="container">
 
+      <div class="modal fade" id="failuremodal" tabindex="-1" role="dialog">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header" style="background-color: #d9534f">
+            <h5 class="modal-title" style="color:#fff">That's not good!</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <p><span id='errorMessage'></span></p>
+            <p>Want to try again?</p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">OK</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <div class="jumbotron">
       <!-- jumbotron -->
 
       <h1 class="display-4">What's in the picture?</h1>
       <p class="lead">We're using the Watson Visual Recognition service to analyze the content of a picture</p>
-
     </div>
-
 
     <div class="row with-bottom-margin">
       <div class="col">
         <!-- image -->
-        <img id=img src="" height="150px">
+        <img id=img src="" height="150px" onerror="this.style.display='none'">
       </div>
       <div class="col-8" id=loader style="display:flex;justify-content:center;align-items:center;">
         <!-- spinning loader -->
         <div class="loader"></div>
       </div>
     </div>
-
 
     <!-- total form -->
     <div id=form>
