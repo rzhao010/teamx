@@ -12,6 +12,9 @@
   <!-- Load bootstrap CSS -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css">
 
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="css/style.css">
+
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -26,83 +29,54 @@
 
   <div class="container">
 
-    <!-- success or failure modals -->
-    <div class="modal fade" id="successmodal" tabindex="-1" role="dialog">
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">
-          <div class="modal-header" style="background-color:#5cb85c">
-            <h5 class="modal-title" style="color:#fff">Done!</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <div class="modal-body">
-            <p>I've analyzed <span id='dataFromServer'></span></p>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="modal fade" id="warningmodal" tabindex="-1" role="dialog">
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">
-          <div class="modal-header" style="background-color:#f0ad4e">
-            <h5 class="modal-title" style="color:#fff">That doesn't look right!</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <div class="modal-body">
-            <p>Did you really enter a valid URL?</p>
-            <p>Could you please have a look and correct it?</p>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="modal fade" id="failuremodal" tabindex="-1" role="dialog">
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">
-          <div class="modal-header" style="background-color: #d9534f">
-            <h5 class="modal-title" style="color:#fff">That's not good!</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <div class="modal-body">
-            <p>I tried to submit the link, but the node.js backend app is not responding.</p>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-          </div>
-        </div>
-      </div>
-    </div>
-
     <div class="jumbotron">
       <!-- jumbotron -->
 
       <h1 class="display-4">What's in the picture?</h1>
-      <p class="lead">We'll be using the Watson Visual Recognition service to analyze the content of a picture</p>
+      <p class="lead">We're using the Watson Visual Recognition service to analyze the content of a picture</p>
 
     </div>
-    <!-- jumbotron -->
+
+
+    <div class="row with-bottom-margin">
+      <div class="col">
+        <!-- image -->
+        <img id=img src="" height="150px">
+      </div>
+      <div class="col-8" id=loader style="display:flex;justify-content:center;align-items:center;">
+        <!-- spinning loader -->
+        <div class="loader"></div>
+      </div>
+    </div>
+
 
     <!-- total form -->
-    <form>
+    <div id=form>
+      <form>
+        <div class="form-group">
+          <label for="URLField">Link to the picture that you want me to look at</label>
+          <input type="text" class="form-control" id="URLField" name="URLField" placeholder="http://bla.com/pic-to-be-analyzed.jpg" required>
+        </div>
+        <!-- submit button -->
+        <button type="submit" data-toggle="modal" data-target="#successalert" class="btn btn-primary">Submit</button>
 
-      <label for="URLField">Link to the picture that you want me to look at</label>
-      <input type="text" class="form-control" id="URLField" name="URLField" placeholder="http://bla.com/pic-to-be-analyzed.jpg">
+      </form>
+    </div>
 
-      <!-- submit button -->
-      <button type="submit" data-toggle="modal" data-target="#successalert" class="btn btn-primary">Submit</button>
-    </form>
+    <!-- table to display results -->
+    <div id=resulttable>
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Class</th>
+            <th>Score</th>
+          </tr>
+        </thead>
+        <tbody>
+
+        </tbody>
+      </table>
+    </div>
 
   </div>
   <!-- container -->
@@ -114,6 +88,10 @@
 
   <!-- Load my javascript file -->
   <script src="src/client-js.js"></script>
+
+  <!-- google code prettify -->
+  <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
+
 </body>
 
 </html>

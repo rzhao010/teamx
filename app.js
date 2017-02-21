@@ -44,8 +44,11 @@ if (appEnv.isLocal === true) {
   console.log('We are running on Cloud Foundry');
 }
 
-appEnv = cfenv.getAppEnv({vcap: localVCAP});
-console.log('appEnv: ' + appEnv);
+appEnv = cfenv.getAppEnv({
+  vcap: localVCAP
+});
+console.log('appEnv:');
+console.log(appEnv);
 
 // ----------------------------------------------------------------------------
 // Set up express
@@ -64,6 +67,7 @@ app.use(bodyParser.json());
 // handle post request
 
 app.post('/data', function(req, res) {
+
   if (!req.body) {
     console.log('Server did not receive data');
     console.log('req: ' + req);
@@ -73,21 +77,53 @@ app.post('/data', function(req, res) {
     console.log('I will be analyzing:');
     console.log(req.body.link);
 
-// -------------------- snip ----------------------------------------------
 
-// require the axios library for http REST calls
+    // -------------------- snip ----------------------------------------------
 
-// get the API keys for Watson
-var visualRecognitiontConfig = appEnv.getServiceCreds('uwe-visual-recognition');
-if (!visualRecognitiontConfig) {
-  throw new Error('Could not find a configuration for the recognition service');
-}
+    // get the API keys for Watson
+    var visualRecognitionKey = appEnv.getServiceCreds('uwe-visual-recognition');
+    if (!visualRecognitionKey) {
+      throw new Error('Could not find a configuration for the recognition service');
+    }
+    // require the axios library for http REST calls
+    const axios = require('axios');
+
+    // set up parameters for the GET request
+    var axiosConfig = {
+      method: 'get',
+      url: 'https://watson-api-explorer.mybluemix.net/visual-recognition/api/v3/classify',
+      timeout: 20000,
+      withCredentials: true,
+      key: visualRecognitionKey,
+      params: {
+        url: req.body.link,
+        version: '2016-05-20'
+      }
+    };
+
+    // make the GET request
+    axios(axiosConfig)
+      .then(function(response) {
+        console.log('Response status: ' + response.status);
+        console.log(JSON.stringify(response.data));
+
+        // check to see if Watson found the image
+        if (response.data.images[0].error) {
+          console.log('Error from visual recognition service:');
+          console.log(response.data.images[0].error.description);
+        }
+
+        return res.send(response.data);
+
+      })
+      .catch(function(error) {
+        console.log(error);
+      });
+
+    // -------------------- snip ----------------------------------------------
 
 
-// -------------------- snip ----------------------------------------------
-
-
-    return res.send(req.body);
+    // return res.send(response.data);
   }
 });
 
