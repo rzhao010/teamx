@@ -74,7 +74,7 @@ $(document).ready(function() {
         if (jqXhr.status === 300) {
           errorMessage = 'I could not find an image at that URL';
         } else if (jqXhr.status === 400) {
-          errorMessage = 'Hmmm ... the backend is not answering';
+          errorMessage = 'Hmmm ... Watson is not answering';
         } else {
           errorMessage = 'I have no idea what went wrong';
         }

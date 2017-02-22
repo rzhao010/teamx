@@ -119,6 +119,7 @@ app.post('/data', function(req, res) {
       })
       .catch(function(error) {
         console.log(error);
+        return res.sendStatus(400);
       });
 
     // -------------------- snip ----------------------------------------------
