@@ -1,0 +1,25 @@
+{
+
+  "services": {
+
+    "watson_vision_combined": [
+      {
+        "credentials": {
+          "url": "https://gateway-a.watsonplatform.net/visual-recognition/api",
+          "note": "It may take up to 5 minutes for this key to become active",
+          "api_key": <insert your Watson API key here>
+        },
+        "syslog_drain_url": null,
+        "label": "watson_vision_combined",
+        "provider": null,
+        "plan": "free",
+        "name": <insert the name of your Watson service on Bluemix here>,
+        "tags": [
+          "watson",
+          "ibm_created",
+          "ibm_dedicated_public"
+        ]
+      }
+    ]
+  }
+}
