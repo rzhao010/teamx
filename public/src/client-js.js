@@ -42,6 +42,7 @@ $(document).ready(function() {
         // loop through the array and extract classes and scores
         for (var i = 0; i < classesScores.length; i++) {
           var obj = classesScores[i];
+
           for (var key in obj) {
             var value = obj[key];
             console.log(key + ': ' + value);
@@ -49,9 +50,10 @@ $(document).ready(function() {
               var classToDisplay = value;
             }
             if (key === 'score') {
-              var scoreToDisplay = value;
+              var scoreToDisplay = (value * 100).toFixed(0) + '%';
             }
           }
+
           // append resulting info to the table
           var newRow = '<tr><td>' + classToDisplay + '</td><td>' + scoreToDisplay + '</td><td></tr>';
           $('table tbody').append(newRow);
