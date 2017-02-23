@@ -28,7 +28,7 @@ If you are looking for a detailed "getting started" guide for the Watson Visual 
 3. Download and install GitHub Desktop (instructions here: https://desktop.github.com)
 4. Download and install the Atom editor for free here: https://atom.io
 5. Download and install node.js on your laptop: https://nodejs.org/en/download/
-6. Verify node.js installation: `node -v`
+6. Verify the node.js installation: `node -v`
 7. Update npm to the latest version: `sudo npm install npm@latest -g`
 
 ### Learning Path
