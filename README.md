@@ -1,4 +1,4 @@
-## What's in that Picture?
+# What's in that Picture?
 
 This is a simple web application running on Bluemix that:
 
@@ -21,21 +21,21 @@ If you are looking for a detailed "getting started" guide for the Watson Visual 
 
 ------
 
-### Instructions for for a 2-Hour Workshop
+## Instructions for for a 2-Hour Workshop
 
-#### Prep Work
+### Prep Work
 
 1. Sign up for a free IBM Bluemix account here: https://console.ng.bluemix.net/registration
 2. Sign up for a free GitHub account here: https://github.com/join
-3. Download and install GitHub Desktop (instructions here: https://desktop.github.com )
+3. Download and install GitHub Desktop (instructions here: https://desktop.github.com)
 4. Download and install the Atom editor for free here: https://atom.io
 5. Download and install node.js on your laptop: https://nodejs.org/en/download/
 6. Verify node.js installation: `node -v`
 7. Update npm to the latest version: `sudo npm install npm@latest -g`
 
-#### Learning Path
+### Learning Path
 
-##### Deploy a starter app and create a toolchain with a CI/CD pipeline
+#### Deploy a starter app and create a toolchain with a CI/CD pipeline
 
 1. Log into Bluemix
 
@@ -57,7 +57,7 @@ If you are looking for a detailed "getting started" guide for the Watson Visual 
 
    ==> We now have a functional development environment set up
 
-##### Make a code change and deploy the changes by using the toolchain
+#### Make a code change and deploy the changes by using the toolchain
 
 1. Open `index.html` and change the welcome message
 
@@ -69,25 +69,25 @@ If you are looking for a detailed "getting started" guide for the Watson Visual 
 
    ==> We've shown that we can propagate code changes to deployment
 
-##### Copy & paste html and CSS code to have a static front-end
+#### Copy & paste html and CSS code to have a static front-end
 
 1. ...
 
-##### Copy & paste node.js code to serve the front-end
+#### Copy & paste node.js code to serve the front-end
 
-##### Add javascript to the front-end, passing the link to the back-end
+#### Add javascript to the front-end, passing the link to the back-end
 
-##### Add a route to the back-end, ready to accept the link from the front-end
+#### Add a route to the back-end, ready to accept the link from the front-end
 
-##### Instantiate the Watson service and get it's API key
+#### Instantiate the Watson service and get it's API key
 
 1. Add it to manifest.yml
 
-##### Call the Watson service from the back-end, passing the link
+#### Call the Watson service from the back-end, passing the link
 
-##### Receive analysis data from the Watson service
+#### Receive analysis data from the Watson service
 
-##### Pass analysis data to the front end and display it
+#### Pass analysis data to the front end and display it
 
 
 
