@@ -71,7 +71,7 @@ Below are rudimentary instructions. They are not meant to be detailed enough to 
 
 #### Copy & paste front-end
 
-We will not be spending much time and effot on coding or understanding the details of the front-end. It's built on the bootstrap framework and does little more than prompt for a link, which it passes (via the javascript contained in `/public/src/client-js.js` ) to the back-end node.js application.
+We will not be spending much time and effort on coding or understanding the details of the front-end. It's built on the bootstrap framework and does little more than prompt for a link, which it passes (via the javascript contained in `/public/src/client-js.js` ) to the back-end node.js application.
 
 1. Copy all files from the `/public ` directory of this repo into your `/public` directory
 2. Re-start your node.js application locally and check to see if the new front-end is being served locally at at http://localhost:6015 
@@ -85,7 +85,7 @@ Next, we are going to "build up" the back-end application. We'll start with the 
 
 1. Replace your current `app.js` with `app-with-route.js` (still using the name `app.js`)
 
-2. Go through the `app.js ` source code to understand how the URL is being received bay the back-end
+2. Go through the `app.js ` source code to understand how the URL is being received by the back-end
 
 3. Install all required npm modules with `npm -install —save` 
 

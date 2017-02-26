@@ -79,7 +79,7 @@ app.post('/data', function(req, res) {
 
     // This is where we will add code to analyze the picture
 
-    return res.sendStatus(200);
+    return res.sendStatus(400);
 
   }
 });
