@@ -9,8 +9,7 @@
     "axios": "^0.15.3",
     "body-parser": "1.15.x",
     "cfenv": "1.0.x",
-    "express": "4.14.x",
-    "watson-developer-cloud": "^2.20.1"
+    "express": "4.14.x"
   },
   "repository": {},
   "engines": {

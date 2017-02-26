@@ -78,7 +78,7 @@ $(document).ready(function() {
         } else if (jqXhr.status === 400) {
           errorMessage = 'Hmmm ... Watson is not answering';
         } else {
-          errorMessage = 'I have no idea what went wrong';
+          errorMessage = 'I have no idea what went wrong. Maybe you are not connected to the internet?';
         }
 
         // hide image and loader

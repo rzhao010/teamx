@@ -33,6 +33,8 @@ If you are looking for a detailed "getting started" guide for the Watson Visual 
 
 ### Learning Path
 
+Below are rudimentary instructions. They are not meant to be detailed enough to be followed without some face-to-face guidance.
+
 #### Deploy a starter app and create a toolchain with a CI/CD pipeline
 
 1. Log into Bluemix
@@ -67,27 +69,57 @@ If you are looking for a detailed "getting started" guide for the Watson Visual 
 
    ==> We've shown that we can propagate code changes to deployment
 
-#### Copy & paste html and CSS code to have a static front-end
+#### Copy & paste front-end
 
-1. ...
+We will not be spending much time and effot on coding or understanding the details of the front-end. It's built on the bootstrap framework and does little more than prompt for a link, which it passes (via the javascript contained in `/public/src/client-js.js` ) to the back-end node.js application.
 
-#### Copy & paste node.js code to serve the front-end
+1. Copy all files from the `/public ` directory of this repo into your `/public` directory
+2. Re-start your node.js application locally and check to see if the new front-end is being served locally at at http://localhost:6015 
+3. Commit the changes and deploy the app to Bluemix via the toolchain
 
-#### Add javascript to the front-end, passing the link to the back-end
+​	==> We now have a functioning front-end for our application
 
 #### Add a route to the back-end, ready to accept the link from the front-end
 
+Next, we are going to "build up" the back-end application. We'll start with the simple node.js server that we already have, and add a route (API) to it that will accept the link (to the picture being analyzed) from the front-end.
+
+1. Replace your current `app.js` with `app-with-route.js` (still using the name `app.js`)
+
+2. Go through the `app.js ` source code to understand how the URL is being received bay the back-end
+
+3. Install all required npm modules with `npm -install —save` 
+
+4. Re-start your node.js application locally and check to see if the new front-end is still being served locally at http://localhost:6015
+
+5. Commit the changes and deploy the app to Bluemix via the toolchain
+
+   ==> We now have a back-end that receives the link from the front-end
+
 #### Instantiate the Watson service and get it's API key
 
-1. Add it to manifest.yml
+Next, we need to instantiate an instance of the Watson Visual Recognition service that we will be calling to analzye the picture for us.
 
-#### Call the Watson service from the back-end, passing the link
+1. In the Bluemix dashboard, navigate to the app and (in the "connections" tab) add the Watson service to it.
 
-#### Receive analysis data from the Watson service
+2. Copy the `vcap.json` file to your directory and add the Watson API credentials to it (so that we have them accessible when running the app locally)
 
-#### Pass analysis data to the front end and display it
+3. Add the Watson service to the `manifest.yml` file
 
+   ==> We now have the Watson Visual Recognition service connected to our back-end application
 
+#### Call the Watson service from the back-end, then pass the analysis result to the front-end
+
+Next, we need to add code to pass our URL to the Watson service via its REST API. 
+
+1. Replace your current `app.js` with the `app.js` from this repo
+
+2. Go through the `app.js ` source code to understand how the Watson service is being called and the results are then passed to the front-end
+
+3. Re-start your node.js application locally, you should now have a fully functional visual recognition app running at http://localhost:6015
+
+4. Commit the changes and deploy the app to Bluemix via the toolchain
+
+   ==> We're done and have a running Watson-based application on Bluemix
 
 
 
