@@ -41,19 +41,24 @@ Below are rudimentary instructions. They are not meant to be detailed enough to 
 
 2. Create and deploy a node.js starter app at https://console.ng.bluemix.net/catalog/starters/sdk-for-nodejs
 
-3. Add a toolchain to it (from the app overview page) and configure it
+3. Wait for the application to deploy
 
-4. Check that a repo has been created at https://github.com
+4. Add a toolchain to the app (from the applications overview page) and configure it correctly:
 
-5. Download the source code to the GitHub desktop tool
+   - Github integration
+   - Delivery pipeline
 
-6. Run `npm install --save` to have npm modules installed locally
+5. Check that a repo has been created at https://github.com
 
-7. Copy and paste the provided `.gitignore` , `.cfignore` and `.eslintrc` files
+6. Download (clone) the source code to the GitHub desktop tool
 
-8. Start the node.js back-end locally: `node app.js`
+7. Run `npm install --save` to have npm modules installed locally
 
-9. Check if the web app is served locally at http://localhost:6015
+8. Copy and paste the provided `.gitignore` , `.cfignore` and `.eslintrc` files
+
+9. Start the node.js back-end locally: `node app.js`
+
+10. Check if the web app is served locally at (e.g. at http://localhost:6015)
 
    ==> We now have a functional development environment set up
 
@@ -74,10 +79,10 @@ Below are rudimentary instructions. They are not meant to be detailed enough to 
 We will not be spending much time and effort on coding or understanding the details of the front-end. It's built on the bootstrap framework and does little more than prompt for a link, which it passes (via the javascript contained in `/public/src/client-js.js` ) to the back-end node.js application.
 
 1. Copy all files from the `/public ` directory of this repo into your `/public` directory
-2. Re-start your node.js application locally and check to see if the new front-end is being served locally at at http://localhost:6015 
+2. Re-start your node.js application locally and check to see if the new front-end is being served locally at (e.g. at http://localhost:6015)
 3. Commit the changes and deploy the app to Bluemix via the toolchain
 
-​	==> We now have a functioning front-end for our application
+   ​==> We now have a functioning front-end for our application
 
 #### Add a route to the back-end, ready to accept the link from the front-end
 
@@ -87,11 +92,13 @@ Next, we are going to "build up" the back-end application. We'll start with the 
 
 2. Go through the `app.js ` source code to understand how the URL is being received by the back-end
 
-3. Install all required npm modules with `npm -install —save` 
+3. Replace your current `package.json` with the `package.json` file from this repo.
 
-4. Re-start your node.js application locally and check to see if the new front-end is still being served locally at http://localhost:6015
+4. Install all required npm modules with `npm install --save` 
 
-5. Commit the changes and deploy the app to Bluemix via the toolchain
+5. Re-start your node.js application locally and check to see if the new back-end is being served locally (e.g. at http://localhost:6015)
+
+6. Commit the changes and deploy the app to Bluemix via the toolchain
 
    ==> We now have a back-end that receives the link from the front-end
 
@@ -101,9 +108,11 @@ Next, we need to instantiate an instance of the Watson Visual Recognition servic
 
 1. In the Bluemix dashboard, navigate to the app and (in the "connections" tab) add the Watson service to it.
 
-2. Copy the `vcap.json` file to your directory and add the Watson API credentials to it (so that we have them accessible when running the app locally)
+2. Copy the `vcap.json.example` file from this repo to your directory and name it `vcap.json`
 
-3. Add the Watson service to the `manifest.yml` file
+3.  Add the Watson API credentials to `vcap.json` (so that we have them accessible when running the app locally)
+
+4. Add the Watson service to the `manifest.yml` file
 
    ==> We now have the Watson Visual Recognition service connected to our back-end application
 
@@ -115,7 +124,7 @@ Next, we need to add code to pass our URL to the Watson service via its REST API
 
 2. Go through the `app.js ` source code to understand how the Watson service is being called and the results are then passed to the front-end
 
-3. Re-start your node.js application locally, you should now have a fully functional visual recognition app running at http://localhost:6015
+3. Re-start your node.js application locally, you should now have a fully functional visual recognition app (e.g. at http://localhost:6015)
 
 4. Commit the changes and deploy the app to Bluemix via the toolchain
 
