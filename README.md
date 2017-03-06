@@ -19,7 +19,7 @@ This code is **not** meant to be production worthy, so don't use any of it for r
 
 If you are looking for a detailed "getting started" guide for the Watson Visual Recognition service, head on over [here](https://www.ibm.com/watson/developercloud/doc/visual-recognition/getting-started.html). Looking for a demo of the service? [Go here](https://visual-recognition-demo.mybluemix.net/).
 
-# Instructions for for a 3-Hour Workshop
+# Instructions for a 3-Hour Workshop
 
 ### Prep Work
 
