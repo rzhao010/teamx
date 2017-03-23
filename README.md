@@ -1,3 +1,5 @@
+<a href="https://codeclimate.com/github/uwefassnacht/whats-in-the-pic"><img src="https://codeclimate.com/github/uwefassnacht/whats-in-the-pic/badges/gpa.svg" /></a> <a href="https://codeclimate.com/github/uwefassnacht/whats-in-the-pic"><img src="https://codeclimate.com/github/uwefassnacht/whats-in-the-pic/badges/issue_count.svg" /></a>
+
 # What's in that Picture?
 
 This is a simple web application running on Bluemix that:
@@ -94,7 +96,7 @@ Next, we are going to "build up" the back-end application. We'll start with the 
 
 3. Replace your current `package.json` with the `package.json` file from this repo.
 
-4. Install all required npm modules with `npm install --save` 
+4. Install all required npm modules with `npm install --save`
 
 5. Re-start your node.js application locally and check to see if the new back-end is being served locally (e.g. at http://localhost:6015)
 
@@ -118,7 +120,7 @@ Next, we need to instantiate an instance of the Watson Visual Recognition servic
 
 #### Call the Watson service from the back-end, then pass the analysis result to the front-end
 
-Next, we need to add code to pass our URL to the Watson service via its REST API. 
+Next, we need to add code to pass our URL to the Watson service via its REST API.
 
 1. Replace your current `app.js` with the `app.js` from this repo
 
@@ -129,6 +131,3 @@ Next, we need to add code to pass our URL to the Watson service via its REST API
 4. Commit the changes and deploy the app to Bluemix via the toolchain
 
    ==> We're done and have a running Watson-based application on Bluemix
-
-
-
