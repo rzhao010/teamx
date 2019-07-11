@@ -13,7 +13,7 @@
         "label": "watson_vision_combined",
         "provider": null,
         "plan": "free",
-        "name": "<insert the name of your Watson service on Bluemix here>",
+        "name": "<whats-in-the-pic>",
         "tags": [
           "watson",
           "ibm_created",
