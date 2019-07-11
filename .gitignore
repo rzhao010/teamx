@@ -2,7 +2,6 @@ vcap.json
 .DS_STORE
 node_modules
 .env
-tmp
 logs
 *.log
 *creds*
