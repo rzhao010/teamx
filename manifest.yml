@@ -9,4 +9,5 @@ applications:
   disk_quota: 1024M
   buildpack: sdk-for-nodejs
   services:
-  - uwe-visual-recognition
+	- visual-recognition
+ 
