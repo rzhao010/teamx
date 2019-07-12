@@ -100,7 +100,7 @@ app.post('/data', function(req, res) {
 	},
       params: {
         url: req.body.link,
-	classifier_ids:["DefaultCustomModel_278069580"],
+	["classifier_ids"]:"DefaultCustomModel_278069580",
         version: '2018-03-19'
       }
     };

@@ -1,11 +1,11 @@
 applications:
-- name: whats-in-the-pic
+- name: Hot-And-Cold
   command: node app.js
   path: .
   memory: 256M
   instances: 1
   domain: mybluemix.net
-  host: whats-in-the-pic
+  host: hot-and-cold
   disk_quota: 1024M
   buildpack: sdk-for-nodejs
   services:
