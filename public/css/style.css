@@ -18,6 +18,13 @@
   animation: spin 2s linear infinite;
 }
 
+.tempData
+{
+	border: 1px solid #333;
+}
+
+
+
 @keyframes spin {
   0% {
     transform: rotate(0deg);

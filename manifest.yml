@@ -9,5 +9,5 @@ applications:
   disk_quota: 1024M
   buildpack: sdk-for-nodejs
   services:
-  - watson-vision-combined-dsx 
+  - Visual Recognition-qf 
  

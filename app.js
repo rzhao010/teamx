@@ -82,7 +82,7 @@ app.post('/data', function(req, res) {
     // -------------------- snip ----------------------------------------------
 
     // get the API keys for Watson
-    var visualRecognitionKey = "_W1AXK4eGcRgPYHhM1xX8he7MWvLv0GJWKThULhtR3L_";
+    var visualRecognitionKey = "SIJxx7BAYQUDelRxU3YAxR6Xo2guzfiab8_64UrW1DYw";
     //var visualRecognitionKey = appEnv.getServiceCreds('Visual-Recognition-db');
     if (!visualRecognitionKey) {
       throw new Error('Could not find a configuration for the recognition service');
@@ -100,6 +100,7 @@ app.post('/data', function(req, res) {
 	},
       params: {
         url: req.body.link,
+	classifier_ids:["DefaultCustomModel_278069580"],
         version: '2018-03-19'
       }
     };
